@@ -4,15 +4,16 @@ import './filter.css';
 //make it pure function
 export default class Filter extends Component {
     renderFilter() {
-        if (this.props.filterType === "literal")
+        if (this.props.type === "literal")
             return this.renderTextFilter();
         return this.renderColorFilter();
     }
 
     renderColorFilter() {
-        var divStyle = {
-            background: this.props.filterColor
-          };
+        const divStyle = {
+            backgroundColor: this.props.text
+        };
+        debugger;
         return (
             <span style={ divStyle }></span>
         );
@@ -20,7 +21,7 @@ export default class Filter extends Component {
 
     renderTextFilter() {
         return (
-            <span>{ this.props.filterText }</span>
+            <span>{ this.props.text }</span>
         );
     }
 

@@ -1,0 +1,2 @@
+export const FETCH_SHAPES = "FETCH_SHAPES";
+export const FETCH_FILTERS = "FETCH_FILTERS";

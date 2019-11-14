@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "type": "literal",
+        "text": "Round"
+    },
+    {
+        "id": 2,
+        "type": "literal",
+        "text": "Square"
+    },
+    {
+        "id": 3,
+        "type": "literal",
+        "text": "Triangle"
+    },
+    {
+        "id": 4,
+        "type": "literal",
+        "text": "Oval"
+    },
+    {
+        "id": 5,
+        "type": "literal",
+        "text": "Rectangle"
+    },
+    {
+        "id": 6,
+        "type": "color",
+        "text": "purple"
+    },
+    {
+        "id": 7,
+        "type": "color",
+        "text": "red"
+    },
+    {
+        "id": 8,
+        "type": "color",
+        "text": "green"
+    },
+    {
+        "id": 9,
+        "type": "color",
+        "text": "blue"
+    },
+    {
+        "id": 10,
+        "type": "color",
+        "text": "yellow"
+    },
+    {
+        "id": 11,
+        "type": "color",
+        "text": "grey"
+    }
+]

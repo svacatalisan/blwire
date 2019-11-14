@@ -1,14 +1,16 @@
 import { API } from '../middleware/actions/types'
 
-export function get(params, onSuccess, onFailure) {
+export function get(url, params, onSuccess, onFailure) {
     return apiAction({
-        onSuccess: onSuccess,
-        onFailure: onFailure,
+        url,
+        params,
+        onSuccess,
+        onFailure,
         label: 'api request'
     });
 }
 
-export function post(data, onSuccess, onFailure) {
+export function post(url, data, onSuccess, onFailure) {
     return apiAction({
         method: 'POST',
         data,

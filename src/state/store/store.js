@@ -15,7 +15,6 @@ import rootReducers from './index';
 
 
 // CONFIGURE STORE
-
 export const createAppStore = () => {
-    return createStore(rootReducers, applyMiddleware(apiMiddleware, logger, thunk, promiseMiddleware()));
+    return createStore(rootReducers, applyMiddleware(apiMiddleware, logger, thunk, promiseMiddleware));
 };

@@ -3,7 +3,13 @@
 
 import { FETCH_DATA } from '../actions';
 
-export default (state = {}, action) => {
+const initialState = {
+    pending: false,
+    shapes: [],
+    error: null
+}
+
+export default (state = initialState, action) => {
     switch(action.type) {
         case FETCH_DATA:
             return action.payload;

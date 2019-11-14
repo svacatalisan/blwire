@@ -1,2 +1,4 @@
 export const FETCH_SHAPES = "FETCH_SHAPES";
 export const FETCH_FILTERS = "FETCH_FILTERS";
+export const APPLY_FILTER = "APPLY_FILTER";
+export const REMOVE_FILTER = "REMOVE_FILTER";

@@ -19,6 +19,10 @@ export default class Shape extends Component {
     }
 
     render() {
+        console.log(this.props.shape, this.props.shouldBeDisplayed);
+        if (!this.props.shouldBeDisplayed) {
+            return (<div></div>);
+        }
         return (
             <div className="inline-block">
                 { this.renderShape() }

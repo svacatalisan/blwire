@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 
 // calling the default reducer to create a link
 import defaultReducer from '../reducers';

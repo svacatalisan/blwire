@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './shape.css';
 
 export default class Shape extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return !this.props.hidden;
+      }
+
     renderShape() {
         let style = {
             background: this.props.color

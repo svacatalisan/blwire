@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { get } from '../../services/crud.service';
 import { fetchShapes, fetchFilters } from './actions/index';
 import './home.css';
-import Shape from '../shape/shape';
-import Filter from './filter/filter';
+import Shape from '../shared/shape/shape';
+import Filter from '../shared/filter/filter';
+import ItemsNumber from '../shared/items-number/items-number';
 
 class Home extends Component {
     constructor(props) {
@@ -48,6 +49,9 @@ class Home extends Component {
                         <Filter filter={ filter } key={ filter.id }></Filter>    
                     ) }
                 </div>
+            </div>
+            <div class="items-number-container">
+                <ItemsNumber></ItemsNumber>
             </div>
             <div className="shapes">
                 { this.props.shapes.map(shape =>

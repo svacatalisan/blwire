@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { memo } from 'react';
 import './header.css';
 
-//make it pure function
-export default class Header extends Component {
-  render() {
-    return (
-      <div className="main-header">
-        <div className="title">Shapes</div>
-      </div>
-    );
-  }
+function Header() {
+  return (
+    <div className="main-header">
+      <div className="title">Shapes</div>
+    </div>
+  );
 }
+
+// Wrap component using `React.memo()`
+export default memo(Header);

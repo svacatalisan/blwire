@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
                 appliedFilters: action.payload
             };
         case APPLY_FILTER:
-                const appliedFilters = state.appliedFilters;
+                const appliedFilters = [...state.appliedFilters];
                 appliedFilters.push(action.payload);
                 return {
                     ...state,

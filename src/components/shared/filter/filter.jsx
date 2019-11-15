@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './filter.css';
-import { applyFilter, removeFilter } from '../actions/index';
+import { applyFilter, removeFilter } from '../../home/actions/index';
 
 //make it pure function
 class Filter extends Component {

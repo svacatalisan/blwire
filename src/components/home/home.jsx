@@ -57,6 +57,9 @@ class Home extends Component {
                 { this.props.shapes.map(shape =>
                     <Shape shouldBeDisplayed={ this.shouldDisplayShape(shape) } shape={ shape.shape } color={ shape.color } key={ shape.id }></Shape>    
                 ) }
+                <Shape hidden={ true } shouldBeDisplayed = { true }></Shape>
+                <Shape hidden={ true } shouldBeDisplayed = { true }></Shape>
+                <Shape hidden={ true } shouldBeDisplayed = { true }></Shape>
             </div>
         </div>
         );

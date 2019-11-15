@@ -19,12 +19,17 @@ export default class Shape extends Component {
     }
 
     render() {
-        console.log(this.props.shape, this.props.shouldBeDisplayed);
+        const style = {};
         if (!this.props.shouldBeDisplayed) {
-            return (<span className="hidden"></span>);
+            return (<span className="hide"></span>);
         }
+
+        if (this.props.hidden) {
+            style.visibility = 'hidden';
+        }
+
         return (
-            <div className="inline-block">
+            <div className="inline-block" style={ style }>
                 { this.renderShape() }
             </div>
         );

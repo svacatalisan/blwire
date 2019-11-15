@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component should render with given state from Redux store 1`] = `
+<div
+  className="layout-container"
+>
+  <div
+    className="main-header"
+  >
+    <div
+      className="title"
+    >
+      Shapes
+    </div>
+  </div>
+  <div
+    className="home"
+  >
+    <div
+      className="filters"
+    >
+      <div
+        className="literal-filters"
+      />
+      <div
+        className="color-filters"
+      />
+    </div>
+    <div
+      className="items-number-container"
+    >
+      <div
+        className="items-number"
+      >
+        <div
+          className="title"
+        >
+          At least one criterion should be selected from each filter categories
+        </div>
+      </div>
+    </div>
+    <div
+      className="shapes"
+    >
+      <div
+        className="inline-block"
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="shape"
+        >
+          <div
+            style={
+              Object {
+                "background": undefined,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="inline-block"
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="shape"
+        >
+          <div
+            style={
+              Object {
+                "background": undefined,
+              }
+            }
+          />
+        </div>
+      </div>
+      <div
+        className="inline-block"
+        style={
+          Object {
+            "visibility": "hidden",
+          }
+        }
+      >
+        <div
+          className="shape"
+        >
+          <div
+            style={
+              Object {
+                "background": undefined,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="footer"
+  />
+</div>
+`;

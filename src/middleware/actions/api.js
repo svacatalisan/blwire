@@ -1,3 +1,5 @@
+// @flow
+
 import { API_START, API_END, ACCESS_DENIED, API_ERROR } from "../actions/types";
 
 export const apiStart = label => ({

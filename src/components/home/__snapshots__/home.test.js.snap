@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component should render with given state from Redux store 1`] = `
+<div
+  className="home"
+>
+  <div
+    className="filters"
+  >
+    <div
+      className="literal-filters"
+    >
+      <div
+        className="filter-item"
+        onClick={[Function]}
+      >
+        <span
+          style={
+            Object {
+              "color": "black",
+            }
+          }
+        >
+          Round
+        </span>
+      </div>
+      <div
+        className="filter-item"
+        onClick={[Function]}
+      >
+        <span
+          style={
+            Object {
+              "color": "black",
+            }
+          }
+        >
+          Square
+        </span>
+      </div>
+    </div>
+    <div
+      className="color-filters"
+    />
+  </div>
+  <div
+    className="items-number-container"
+  >
+    <div
+      className="items-number"
+    >
+      <div
+        className="title"
+      >
+        At least one criterion should be selected from each filter categories
+      </div>
+    </div>
+  </div>
+  <div
+    className="shapes"
+  >
+    <span
+      className="hide"
+    />
+    <span
+      className="hide"
+    />
+    <div
+      className="inline-block"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    >
+      <div
+        className="shape"
+      >
+        <div
+          style={
+            Object {
+              "background": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="inline-block"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    >
+      <div
+        className="shape"
+      >
+        <div
+          style={
+            Object {
+              "background": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="inline-block"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    >
+      <div
+        className="shape"
+      >
+        <div
+          style={
+            Object {
+              "background": undefined,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

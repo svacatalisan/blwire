@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { get } from '../../services/crud.service';
@@ -8,11 +10,6 @@ import Filter from '../shared/filter/filter';
 import ItemsNumber from '../shared/items-number/items-number';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
     componentDidMount() {
         this.props.get('/shapes.json', null, fetchShapes, () => {});
         this.props.get('/filters.json', null, fetchFilters, () => {});
@@ -35,7 +32,6 @@ class Home extends Component {
                 }
             });
         }
-
         return (
         <div className="home">
             <div className="filters">
@@ -50,12 +46,17 @@ class Home extends Component {
                     ) }
                 </div>
             </div>
-            <div class="items-number-container">
+            <div className="items-number-container">
                 <ItemsNumber></ItemsNumber>
             </div>
             <div className="shapes">
                 { this.props.shapes.map(shape =>
-                    <Shape shouldBeDisplayed={ this.shouldDisplayShape(shape) } shape={ shape.shape } color={ shape.color } key={ shape.id }></Shape>    
+                    <Shape 
+                        shouldBeDisplayed={ this.shouldDisplayShape(shape) } 
+                        shape={ shape.shape }
+                        color={ shape.color } 
+                        key={ shape.id }
+                    ></Shape>    
                 ) }
                 <Shape hidden={ true } shouldBeDisplayed = { true }></Shape>
                 <Shape hidden={ true } shouldBeDisplayed = { true }></Shape>

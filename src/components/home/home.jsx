@@ -19,8 +19,12 @@ class Home extends Component<IHomeProps> {
     }
 
     shouldDisplayShape(shape: IShape) {
-        const isInLiterals: boolean = this.props.appliedFilters.filter(lf => lf.text.toLowerCase() ===  shape.shape && lf.type === 'literal').length > 0;
-        const isInColors: boolean = this.props.appliedFilters.filter(lf => lf.text ===  shape.color && lf.type === 'color').length > 0;
+        const isInLiterals: boolean = this.props.appliedFilters.filter(
+            lf => lf.text.toLowerCase() ===  shape.shape && lf.type === 'literal'
+            ).length > 0;
+        const isInColors: boolean = this.props.appliedFilters.filter(
+            lf => lf.text ===  shape.color && lf.type === 'color'
+            ).length > 0;
         return isInColors && isInLiterals;
     }
 

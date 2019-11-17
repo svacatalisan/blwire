@@ -1,7 +1,9 @@
+// @flow
+
 export type IShape = {
     id: string,
     color: string,
-    shape: string
+    shape: 'rectangle' | 'square' | 'oval' | 'round' | 'triangle'
 }
 
 export type IShapeProps = {

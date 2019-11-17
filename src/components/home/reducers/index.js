@@ -19,7 +19,7 @@ const initialState: IDataReducer = {
     appliedFilters: []
 }
 
-export default function(state: IDataReducer = initialState, action: any) {
+export default function(state: IDataReducer = initialState, action: FETCH_SHAPES | FETCH_FILTERS | APPLY_FILTER | REMOVE_FILTER) {
     switch (action.type) {
         case FETCH_SHAPES:
             return {

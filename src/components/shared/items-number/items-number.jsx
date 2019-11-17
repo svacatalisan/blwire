@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './items-number.css';
@@ -55,7 +57,6 @@ class ItemsNumber extends Component<IItemsNumber> {
         }
 
         return 'Multiple items';
-
     }
 
     render() {

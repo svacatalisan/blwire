@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import type { IShapeProps } from './shape.interface.js';
 import './shape.css';
@@ -9,7 +11,6 @@ export default class Shape extends Component<IShapeProps> {
 
     renderShape() {
         const { shape } = this.props;
-
         if (!shape) {
             return(
                 <div className='shape'>
@@ -21,6 +22,7 @@ export default class Shape extends Component<IShapeProps> {
             background: shape.color
         };
         if (shape.shape === 'triangle') {
+            shape.shape = 'test';
             style = {
                 background: 'transparent',
                 borderBottomColor: shape.color

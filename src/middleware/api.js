@@ -4,7 +4,7 @@ import axios from "axios";
 import { API } from "./actions/types";
 import { accessDenied, apiError, apiStart, apiEnd } from "./actions/api";
 
-const apiMiddleware = ({ dispatch }) => next => action => {
+const apiMiddleware = ({ dispatch }: any) => (next: any) => (action: any) => {
   next(action);
 
   if (action.type !== API) return;
@@ -19,7 +19,7 @@ const apiMiddleware = ({ dispatch }) => next => action => {
     label,
     headers
   } = action.payload;
-  const dataOrParams = ["GET", "DELETE"].includes(method) ? "params" : "data";
+  const dataOrParams: "params" | "data"  = ["GET", "DELETE"].includes(method) ? "params" : "data";
 
   // axios default configs
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL || "";
@@ -34,7 +34,7 @@ const apiMiddleware = ({ dispatch }) => next => action => {
     .request({
       url,
       method,
-      headers,
+      headers, //$FlowFixMe
       [dataOrParams]: data
     })
     .then(({ data }) => {

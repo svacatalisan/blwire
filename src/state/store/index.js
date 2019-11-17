@@ -1,3 +1,4 @@
+//$FlowFixMe
 import { combineReducers } from 'redux';
 
 // calling the default reducer to create a link

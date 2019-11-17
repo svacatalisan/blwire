@@ -4,14 +4,22 @@ import {
     APPLY_FILTER,
     REMOVE_FILTER
   } from "../actions/types";
+import type { IShape } from '../../shared/shape/shape.interface';
+import type { IFilter } from '../../shared/filter/filter.interface';
   
-const initialState = {
+export type IDataReducer = {
+    shapes: Array<IShape>,
+    filters: Array<IFilter>,
+    appliedFilters: Array<IFilter>
+}
+
+const initialState: IDataReducer = {
     shapes: [],
     filters: [],
     appliedFilters: []
 }
 
-export default function(state = initialState, action) {
+export default function(state: IDataReducer = initialState, action: any) {
     switch (action.type) {
         case FETCH_SHAPES:
             return {

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './footer.css';
 
-export default class Footer extends Component {
+type IFooter = {};
+
+export default class Footer extends Component<IFooter> {
   render() {
     return (
       <div className="footer">

@@ -1,28 +1,31 @@
 // @flow
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import { connect } from "react-redux";
 import { get } from '../../services/crud.service';
 import { fetchShapes, fetchFilters } from './actions/index';
 import './home.css';
 import Shape from '../shared/shape/shape';
+import type { IShape } from '../shared/shape/shape.interface.js';
+import type { IFilter } from '../shared/filter/filter.interface.js';
+import type { IHomeProps } from './home.interface.js';
 import Filter from '../shared/filter/filter';
 import ItemsNumber from '../shared/items-number/items-number';
 
-class Home extends Component {
+class Home extends Component<IHomeProps> {
     componentDidMount() {
         this.props.get('/shapes.json', null, fetchShapes, () => {});
         this.props.get('/filters.json', null, fetchFilters, () => {});
     }
 
-    shouldDisplayShape(shape) {
-        const isInLiterals = this.props.appliedFilters.filter(lf => lf.text.toLowerCase() ===  shape.shape && lf.type === 'literal');
-        const isInColors = this.props.appliedFilters.filter(lf => lf.text ===  shape.color && lf.type === 'color');
-        return isInColors.length && isInLiterals.length;
+    shouldDisplayShape(shape: IShape) {
+        const isInLiterals: boolean = this.props.appliedFilters.filter(lf => lf.text.toLowerCase() ===  shape.shape && lf.type === 'literal').length > 0;
+        const isInColors: boolean = this.props.appliedFilters.filter(lf => lf.text ===  shape.color && lf.type === 'color').length > 0;
+        return isInColors && isInLiterals;
     }
 
     render() {
-        let literalsFilters = [], colorFilters = [];
+        let literalsFilters: Array<IFilter> = [], colorFilters: Array<IFilter> = [];
         if (this.props.filters.length) {
             this.props.filters.forEach(filter => {
                 if (filter.type === 'literal') {
@@ -53,8 +56,7 @@ class Home extends Component {
                 { this.props.shapes.map(shape =>
                     <Shape 
                         shouldBeDisplayed={ this.shouldDisplayShape(shape) } 
-                        shape={ shape.shape }
-                        color={ shape.color } 
+                        shape={ shape } 
                         key={ shape.id }
                     ></Shape>    
                 ) }

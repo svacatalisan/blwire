@@ -1,6 +1,6 @@
 import { API } from '../middleware/actions/types'
 
-export function get(url, params, onSuccess, onFailure) {
+export function get(url: string, params: any, onSuccess: Function, onFailure: Function) {
     return apiAction({
         url,
         params,
@@ -10,7 +10,7 @@ export function get(url, params, onSuccess, onFailure) {
     });
 }
 
-export function post(url, data, onSuccess, onFailure) {
+export function post(url: string, data: any, onSuccess: Function, onFailure: Function) {
     return apiAction({
         method: 'POST',
         data,

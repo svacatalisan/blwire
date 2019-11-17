@@ -1,34 +1,44 @@
 import React, { Component } from 'react';
+import type { IShapeProps } from './shape.interface.js';
 import './shape.css';
 
-export default class Shape extends Component {
-    shouldComponentUpdate(nextProps, nextState) {
+export default class Shape extends Component<IShapeProps> {
+    shouldComponentUpdate(nextProps: IShapeProps, nextState: any) {
         return !this.props.hidden;
-      }
+    }
 
     renderShape() {
+        const { shape } = this.props;
+
+        if (!shape) {
+            return(
+            <div className='shape'>
+            </div>);
+        }
+
         let style = {
-            background: this.props.color
+            background: shape.color
         };
-        if (this.props.shape === 'triangle') {
+        if (shape === 'triangle') {
             style = {
-                borderBottomColor: this.props.color
+                borderBottomColor: shape.color
             };
         }
         return(
             <div className='shape'>
-                <div className={this.props.shape} style={ style }></div>
+                <div className={shape.shape} style={ style }></div>
             </div>
         );
     }
 
     render() {
-        const style = {};
-        if (!this.props.shouldBeDisplayed) {
+        const style = {},
+              { shouldBeDisplayed, hidden } = this.props;
+        if (!shouldBeDisplayed) {
             return (<span className="hide"></span>);
         }
 
-        if (this.props.hidden) {
+        if (hidden) {
             style.visibility = 'hidden';
         }
 

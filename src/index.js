@@ -9,10 +9,13 @@ import * as serviceWorker from './serviceWorker';
 
 // creating a store for the redux structure
 const store = createAppStore();
+const root = document.getElementById('root')
 
-ReactDOM.render(
-    <Provider store={store}>
+if (root !== null) {
+ ReactDOM.render(
+    <Provider store={store}> 
         <Layout />
-    </Provider>
-    , document.getElementById('root'));
+    </Provider>, // $FlowIgnore
+    (root: any)); 
+}
 serviceWorker.unregister();

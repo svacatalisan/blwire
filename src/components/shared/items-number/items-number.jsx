@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './items-number.css';
+import type { IItemsNumber } from './items-number.interface.js'
 
 //make it pure function
-class ItemsNumber extends Component {
+class ItemsNumber extends Component<IItemsNumber> {
     getFiltersByCategory() {
         const result = {
             literalsFiltersNo: 0,
@@ -24,33 +25,33 @@ class ItemsNumber extends Component {
     }
 
     getOutputMessage() {
-        const appliedFilters = this.props.appliedFilters,
-              mappedFilters = this.getFiltersByCategory();
+        const { appliedFilters } = this.props,
+              { colorsFiltersNo, literalsFiltersNo, shape, color } = this.getFiltersByCategory();
         if (appliedFilters.length === 11)
             return 'All Items:';
 
-        if (mappedFilters.colorsFiltersNo === 0 || mappedFilters.literalsFiltersNo === 0) {
+        if (colorsFiltersNo === 0 || literalsFiltersNo === 0) {
             return 'At least one criterion should be selected from each filter categories';
         }
 
-        if (mappedFilters.colorsFiltersNo === 6 && mappedFilters.literalsFiltersNo === 1) {
-            return `All ${mappedFilters.shape} items`;
+        if (colorsFiltersNo === 6 && literalsFiltersNo === 1) {
+            return `All ${shape} items`;
         }
 
-        if (mappedFilters.literalsFiltersNo === 5 && mappedFilters.colorsFiltersNo === 1) {
-            return `All ${mappedFilters.color} items`;
+        if (literalsFiltersNo === 5 && colorsFiltersNo === 1) {
+            return `All ${color} items`;
         }
 
-        if (mappedFilters.literalsFiltersNo === 1 && mappedFilters.colorsFiltersNo === 1) {
-            return `${mappedFilters.shape} ${mappedFilters.color} item`;    
+        if (literalsFiltersNo === 1 && colorsFiltersNo === 1) {
+            return `${shape} ${color} item`;    
         }
 
-        if (mappedFilters.literalsFiltersNo === 1) {
-            return `Multiple ${mappedFilters.shape} items`;
+        if (literalsFiltersNo === 1) {
+            return `Multiple ${shape} items`;
         }
 
-        if (mappedFilters.colorsFiltersNo === 1) {
-            return `Multiple ${mappedFilters.color} items`;
+        if (colorsFiltersNo === 1) {
+            return `Multiple ${color} items`;
         }
 
         return 'Multiple items';

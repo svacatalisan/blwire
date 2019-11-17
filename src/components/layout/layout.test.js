@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'; //$FlowFixMe
 import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
 import Layout from './layout';
-
+import {describe, beforeEach, expect, it} from 'jest';
 import configureStore from 'redux-mock-store';
+
 const mockStore = configureStore([]);
 
 describe('Layout Component', () => {

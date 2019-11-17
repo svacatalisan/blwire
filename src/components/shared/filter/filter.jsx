@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './filter.css';
+import type { IFilterProps, IFilterState } from './filter.interface.js';
 import { applyFilter, removeFilter } from '../../home/actions/index';
 
 //make it pure function
-class Filter extends Component {
+class Filter extends Component<IFilterProps, IFilterState> {
     constructor(props) {
         super(props);
 
         this.state = {
             isSelected: true
-        }
+        };
     }
 
     renderFilter() {
@@ -24,6 +25,7 @@ class Filter extends Component {
             backgroundColor: this.props.filter.text,
             border: '1px solid transparent'
         };
+
         if (this.state.isSelected) {
             divStyle.border = '1px solid black';
         }
@@ -45,12 +47,13 @@ class Filter extends Component {
     }
 
     toggleFilter = () => {
+        const { filter, removeFilter, applyFilter } = this.props;
         if (this.state.isSelected) {
-            this.props.removeFilter(this.props.filter);
+            removeFilter(filter);
         } else {
-            this.props.applyFilter(this.props.filter);
+            applyFilter(filter);
         }
-        this.setState({ isSelected: !this.state.isSelected })
+        this.setState({ isSelected: !this.state.isSelected });
     }
 
     render() {

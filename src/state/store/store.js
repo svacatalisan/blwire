@@ -1,9 +1,7 @@
 // IMPORT PACKAGE REFERENCES
-
 import { createStore, applyMiddleware } from 'redux';
 
 // IMPORT MIDDLEWARE
-
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import promiseMiddleware from 'redux-promise-middleware';

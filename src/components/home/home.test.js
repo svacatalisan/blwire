@@ -1,16 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
+import {describe, beforeEach, expect, it} from 'jest';
 import Home from './home';
-import ReactTestUtils from 'react-dom/test-utils';
-
 import configureStore from 'redux-mock-store';
 const mockStore = configureStore([]);
 
 describe('Home Component', () => {
   let store;
   let component;
-  let container;
   
   beforeEach(() => {
     store = mockStore({
@@ -65,11 +63,5 @@ describe('Home Component', () => {
   });
 
   it('should dispatch an action on button click', () => {
-    container = ReactTestUtils.renderIntoDocument(
-      <Provider store={store}>
-        <Home />
-    </Provider>);
-    
-    console.log(container);
   });
 });

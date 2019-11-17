@@ -2,9 +2,10 @@ import {
     API_START,
     API_END,
     API_ERROR
-  } from "../actions/types";
+} from "../actions/types";
+import type { IApiReducer } from '../middleware.interface';
   
-  export default function(state = {}, action) {
+  export default function(state: IApiReducer = {}, action: API_START | API_END | API_ERROR) {
     switch (action.type) {
       case API_START:
         return {

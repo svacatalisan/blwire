@@ -1,7 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import './header.css';
 
-function Header() {
+type IHeader = {};
+
+
+const Header = (props: IHeader) => {
   return (
     <div className="main-header">
       <div className="title">Shapes</div>
@@ -10,4 +13,4 @@ function Header() {
 }
 
 // Wrap component using `React.memo()`
-export default memo(Header);
+export default Header;

@@ -12,18 +12,21 @@ export default class Shape extends Component<IShapeProps> {
 
         if (!shape) {
             return(
-            <div className='shape'>
-            </div>);
+                <div className='shape'>
+                </div>
+            );
         }
 
         let style = {
             background: shape.color
         };
-        if (shape === 'triangle') {
+        if (shape.shape === 'triangle') {
             style = {
+                background: 'transparent',
                 borderBottomColor: shape.color
             };
         }
+
         return(
             <div className='shape'>
                 <div className={shape.shape} style={ style }></div>
